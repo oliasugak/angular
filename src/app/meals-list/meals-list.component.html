@@ -1,0 +1,23 @@
+<div class="meals-list">
+  <div
+    *ngFor="let meal of meals"
+    class="meal"
+  >
+    <div class="meal-amount">
+      <img src="assets/water-drop.svg" />
+
+      {{meal.amount}} мл
+    </div>
+    <div class="meal-time">
+      <img src="assets/clock.svg" />
+
+      {{ getTimeString(meal.date) }}
+    </div>
+    <button
+      class="remove-meal-button"
+      (click)="deleteMeal(meal.id)"
+    >
+      <img src="assets/pomoika.svg" />
+    </button>
+  </div>
+</div>

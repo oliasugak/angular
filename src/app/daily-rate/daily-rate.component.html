@@ -1,0 +1,42 @@
+<div class="left-side">
+  <h1 class="greetings">
+    Хаю-хай👋👋
+  </h1>
+
+  <p class="daily-rate-label">
+    Ваша дневная норма воды
+  </p>
+
+  <div class="daily-rate-container">
+    <div class="rate-amount">
+      <img src="assets/water-drop.svg" />
+
+      <span class="rate-amount-number">
+        {{ dailyRate }} мл
+      </span>
+    </div>
+
+      <form
+        *ngIf="isEditing"
+        class='daily-rate-form'
+      >
+        <input
+          class='daily-rate-input'
+          [formControl]="rate"
+          placeholder="Type amount here..."
+        />
+        <button (click)="submit()" type="button">
+          <img src="assets/pencil.svg" />
+        </button>
+      </form>
+
+      <button
+        *ngIf="!isEditing"
+        class="change-rate-button"
+        (click)="startEditing()"
+      >
+      <img src="assets/pencil.svg" />
+        Изменить
+      </button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="current-rate-container">
+  <div class="current-rate-image-container">
+    <img src="assets/pot.svg" />
+
+    <p class="current-rate-amount">
+      {{getAlreadyDrunk()}} мл
+    </p>
+  </div>
+
+  <div class="current-rate-text-container">
+    <h2 class="current-rate-label">
+      Выпито <span class="rate-procentage">{{getAlreadyDrunkPercent()}}%</span> от дневной нормы
+    </h2> 
+
+    <form
+      *ngIf="isFormVisible"
+      class='add-meal-form'
+    >
+      <input
+        [formControl]="rate"
+        placeholder='Type amount here...'
+        class='add-meal-form-input'
+      />
+
+      <button
+        class='submit-form-button'
+        (click)="createMeal(+rate.value)"
+        type="button"
+      >
+        Сохранить
+      </button>
+    </form>
+
+    <button
+      *ngIf="!isFormVisible"
+      class="current-rate-add-button"
+      (click)="showForm()"
+    >
+      Добавить
+    </button>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class='container'>
+  <app-daily-rate
+    [dailyRate]="dailyRate"
+    (updateDailyRateEvent)="updateDailyRate($event)"
+  >
+  </app-daily-rate>
+
+  <div>
+    <app-current-rate
+      [meals]="meals"
+      [dailyRate]="dailyRate"
+      (addMealEvent)="addMeal($event)"
+    >
+    </app-current-rate>
+
+    <app-meals-list
+      [meals]="meals"
+      (deleteMealEvent)="deleteMeal($event)"
+    >
+    </app-meals-list>
+  </div>
+</div>
