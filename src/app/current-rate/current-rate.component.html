@@ -9,7 +9,7 @@
 
   <div class="current-rate-text-container">
     <h2 class="current-rate-label">
-      Выпито <span class="rate-procentage">{{getAlreadyDrunkPercent()}}%</span> от дневной нормы
+      Выпито <span class="rate-procentage">{{getAlreadyDrunkPercent()}}%</span> від добової норми
     </h2> 
 
     <form
@@ -18,7 +18,7 @@
     >
       <input
         [formControl]="rate"
-        placeholder='Type amount here...'
+        placeholder='Type amount here in ml...'
         class='add-meal-form-input'
       />
 
@@ -27,7 +27,7 @@
         (click)="createMeal(+rate.value)"
         type="button"
       >
-        Сохранить
+        Зберегти
       </button>
     </form>
 
@@ -36,7 +36,7 @@
       class="current-rate-add-button"
       (click)="showForm()"
     >
-      Добавить
+      Додати
     </button>
 
   </div>
